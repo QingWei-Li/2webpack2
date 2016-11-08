@@ -30,12 +30,12 @@ module.exports = to2({
 // {
 //   module: {
 //     rules: [
-//       { test: /\.js$/, loader: 'babel' },
+//       { test: /\.js$/, loader: 'babel-loader' },
 //       {
 //         test: /\.css$/,
 //         use: [
-//           { loader: 'style' },
-//           { loader: 'css', options: { modules: true } }
+//           { loader: 'style-loader' },
+//           { loader: 'css-loader', options: { modules: true } }
 //         ]
 //       }
 //     ]
