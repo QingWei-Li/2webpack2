@@ -7,8 +7,7 @@
     "lib"
   ],
   "scripts": {
-    "test": "webpack --config ./test/webpack.config.js",
-    "lint": "xo"
+    "test": "xo && ava"
   },
   "xo": {
     "space": true,
@@ -18,9 +17,18 @@
   },
   "author": "qingwei-li <cinwell.li@gmail.com> (https://github.com/QingWei-Li)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:QingWei-Li/2webpack2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/QingWei-Li/2webpack2/issues"
+  },
+  "peerDependencies": {
+    "webpack": "beta || ^2.0.0"
+  },
   "devDependencies": {
     "ava": "^0.16.0",
-    "webpack": "beta",
     "xo": "^0.17.0"
   },
   "dependencies": {
