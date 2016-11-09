@@ -5,7 +5,7 @@
 
 https://webpack.js.org/how-to/upgrade-from-webpack-1
 
-> 🌚
+> 🕳️ Turn configuration of webpack 1 to 2
 
 ## Installation
 ```shell
@@ -19,33 +19,44 @@ var to2 = require('2webpack2')
 module.exports = to2({
   debug: true,
   module: {
+    preLoaders: [
+      { test: /\.js$/, loader: 'eslint' }
+    ],
     loaders: [
-      { test: /\.js$/, loader: 'babel' },
+      { test: /\.vue$/, loader: 'vue' },
       { test: /\.css$/, loader: 'style!css?modules' }
+    ]
+  },
+  vue: {
+    postcss: [
+      require('autoprefixer')
     ]
   }
 })
+```
 
-// =>
-// {
-//   module: {
-//     rules: [
-//       { test: /\.js$/, loader: 'babel-loader' },
-//       {
-//         test: /\.css$/,
-//         use: [
-//           { loader: 'style-loader' },
-//           { loader: 'css-loader', options: { modules: true } }
-//         ]
-//       }
-//     ]
-//   },
-//   plugins: [
-//     new webpack.LoaderOptionsPlugin({
-//       debug: true
-//     })
-//   ]
-// }
+To
+
+```javascript
+{
+  module: {
+    rules: [
+      { test: /\.js$/, loader: 'eslint-loader', enforce: 'pre' },
+      { test: /\.vue$/, loader: 'vue-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader?modules' }
+    ]
+  },
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      debug: true,
+      vue: {
+        postcss: [
+          require('autoprefixer')
+        ]
+      }
+    })
+  ]
+}
 ```
 
 ## License
