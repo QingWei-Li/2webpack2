@@ -15,7 +15,8 @@ test('resolve', t => {
     modules: [
       'path/to/src',
       'path/to/fallback',
-      'path/to/modulesDirectories'
+      'path/to/modulesDirectories',
+      'node_modules'
     ]
   }
 
