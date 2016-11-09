@@ -21,10 +21,17 @@ var Migrate = function (config, options) {
 Migrate.prototype.run = function () {
   this.handleResolve()
   this.cleanEmptyExtension()
+
+  // loader
   this.config.module = this.config.module || {}
   this.config.module.rules = this.config.module.rules || []
   this.moveLoader()
   this.addLoaderSuffix()
+
+  // plugin
+  this.config.plugins = this.config.plugins || []
+  this.removeOccurrenceOrderPlugin()
+
   this.clean()
 }
 
@@ -121,6 +128,15 @@ Migrate.prototype.addLoaderSuffix = function () {
     if (rule.loaders) {
       rule.loaders = rule.loaders.map(loader.addSuffix)
     }
+  })
+}
+
+/**
+ * https://webpack.js.org/how-to/upgrade-from-webpack-1/#occurrenceorderplugin-is-now-on-by-default
+ */
+Migrate.prototype.removeOccurrenceOrderPlugin = function() {
+  this.config.plugins = this.config.plugins.filter(function (p) {
+    p.constructor.name !== 'OccurrenceOrderPlugin'
   })
 }
 

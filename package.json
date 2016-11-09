@@ -24,7 +24,6 @@
     "xo": "^0.17.0"
   },
   "dependencies": {
-    "chalk": "^1.1.3",
-    "loader-utils": "^0.2.16"
+    "chalk": "^1.1.3"
   }
 }

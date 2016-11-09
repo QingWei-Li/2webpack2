@@ -1,15 +1,8 @@
 var to2 = require('../')
+var webpack = require('webpack')
 
-// module.exports = to2({
-//   entry: './entry.js',
-//   output: {
-//     filename: 'app.js'
-//   },
-//   entry2: 'a'
-// })
-
-console.log(JSON.stringify(to2({
-  entry: './entry.js',
+module.exports = to2({
+  entry: __dirname + '/entry.js',
   output: {
     filename: 'app.js'
   },
@@ -19,5 +12,10 @@ console.log(JSON.stringify(to2({
       {test: /\.css$/, loader: 'style!css?modules'}
     ]
   },
-  entry2: 'a'
-}), null, ' '))
+  entry2: 'a',
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin()
+  ]
+})
+
+console.log(JSON.stringify(module.exports, null, ' '))
