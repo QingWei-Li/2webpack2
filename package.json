@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "ava": "^0.16.0",
+    "webpack": "beta",
     "xo": "^0.17.0"
   },
   "dependencies": {
