@@ -7,7 +7,7 @@
     "lib"
   ],
   "scripts": {
-    "test": "xo && ava"
+    "test": "xo && nyc ava"
   },
   "xo": {
     "space": true,
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "ava": "^0.16.0",
+    "nyc": "^8.4.0",
     "webpack": "beta",
     "xo": "^0.17.0"
   },
