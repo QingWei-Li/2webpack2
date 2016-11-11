@@ -41,7 +41,8 @@ test('loaders', t => {
       loaders: [
         {test: /\.vue$/, loader: 'vue'},
         {test: /\.js$/, loader: 'babel-loader'},
-        {test: /\.css$/, loader: 'style!css?modules'}
+        {test: /\.css$/, loader: 'style!css?modules'},
+        {loader: 'node_modules/extract-text-webpack-plugin/loader.js'}
       ]
     }
   })
@@ -49,7 +50,8 @@ test('loaders', t => {
     rules: [
       {test: /\.vue$/, loader: 'vue-loader'},
       {test: /\.js$/, loader: 'babel-loader'},
-      {test: /\.css$/, loader: 'style-loader!css-loader?modules'}
+      {test: /\.css$/, loader: 'style-loader!css-loader?modules'},
+      {loader: 'node_modules/extract-text-webpack-plugin/loader.js'}
     ]
   }
 
