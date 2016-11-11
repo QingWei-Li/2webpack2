@@ -56,6 +56,23 @@ test('loaders', t => {
   t.deepEqual(actual.module, fixture)
 })
 
+test('fix loaders', t => {
+  const actual = new Migrate({
+    module: {
+      loaders: [
+        {loaders: ['vue'], options: {cssModules: true}}
+      ]
+    }
+  })
+  const fixture = {
+    rules: [
+      {loader: 'vue-loader', options: {cssModules: true}}
+    ]
+  }
+
+  t.deepEqual(actual.module, fixture)
+})
+
 test('postLoaders nad preLoaders', t => {
   const actual = new Migrate({
     module: {
