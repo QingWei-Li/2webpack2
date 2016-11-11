@@ -6,7 +6,7 @@ import to2 from '../'
 test('resolve', t => {
   const actual = new Migrate({
     resolve: {
-      root: 'path/to/src',
+      root: ['path/to/src', 'path/to/src2'],
       fallback: 'path/to/fallback',
       modulesDirectories: 'path/to/modulesDirectories'
     }
@@ -14,6 +14,7 @@ test('resolve', t => {
   const fixture = {
     modules: [
       'path/to/src',
+      'path/to/src2',
       'path/to/fallback',
       'path/to/modulesDirectories',
       'node_modules'
