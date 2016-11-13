@@ -171,3 +171,12 @@ test('options: quiet', t => {
 
   t.falsy(actual.debug)
 })
+
+test('options: context', t => {
+  const actual = to2({}, {context: true})
+  const actual2 = to2({}, {context: 'xxx'})
+
+  t.is(actual.plugins[0].options.options.context, process.cwd())
+  t.is(actual2.plugins[0].options.options.context, 'xxx')
+})
+

@@ -59,5 +59,9 @@ To
 }
 ```
 
+## Options
+- quiet
+- context
+
 ## License
 MIT
