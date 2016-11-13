@@ -1,5 +1,6 @@
 import test from 'ava'
 import webpack from 'webpack'
+import has from 'object-has'
 import Migrate from '../lib/migrate'
 import to2 from '../'
 
@@ -129,14 +130,17 @@ test('other option', t => {
   const actual = new Migrate({
     debug: true,
     entry: 'xxx',
+    postcss: {},
     vue: {}
   })
-  const keys = Object.keys(actual);
 
-  t.not(keys.indexOf('entry'), -1)
-  t.not(keys.indexOf('plugins'), -1)
-  t.is(keys.indexOf('debug'), -1)
-  t.is(keys.indexOf('vue'), -1)
+  t.true(has(actual, 'plugins[0].options.options.postcss'))
+  t.true(has(actual, 'plugins[0].options.vue'))
+  t.true(has(actual, 'plugins[0].options.debug'))
+  t.true(has(actual, 'entry'))
+  t.false(has(actual, 'postcss'))
+  t.false(has(actual, 'debug'))
+  t.false(has(actual, 'vue'))
 })
 
 test('to2: array', t => {
