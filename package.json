@@ -24,9 +24,6 @@
   "bugs": {
     "url": "https://github.com/QingWei-Li/2webpack2/issues"
   },
-  "peerDependencies": {
-    "webpack": "^2.1.0-beta.24"
-  },
   "devDependencies": {
     "ava": "^0.16.0",
     "nyc": "^8.4.0",
