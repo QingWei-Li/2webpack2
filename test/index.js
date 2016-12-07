@@ -135,8 +135,8 @@ test('other option', t => {
   })
 
   t.true(has(actual, 'plugins[0].options.options.postcss'))
-  t.true(has(actual, 'plugins[0].options.vue'))
-  t.true(has(actual, 'plugins[0].options.debug'))
+  t.true(has(actual, 'plugins[0].options.options.vue'))
+  t.true(has(actual, 'plugins[0].options.options.debug'))
   t.true(has(actual, 'entry'))
   t.false(has(actual, 'postcss'))
   t.false(has(actual, 'debug'))
