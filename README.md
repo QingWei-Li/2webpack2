@@ -48,11 +48,13 @@ To
   },
   plugins: [
     new webpack.LoaderOptionsPlugin({
-      debug: true,
-      vue: {
-        postcss: [
-          require('autoprefixer')
-        ]
+      options: {
+        debug: true,
+        vue: {
+          postcss: [
+            require('autoprefixer')
+          ]
+        }
       }
     })
   ]
