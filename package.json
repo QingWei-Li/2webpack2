@@ -32,7 +32,6 @@
     "xo": "^0.17.0"
   },
   "dependencies": {
-    "chalk": "^1.1.3",
     "object-set": "^1.0.1"
   }
 }
