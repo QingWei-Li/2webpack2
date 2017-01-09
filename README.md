@@ -9,7 +9,7 @@ https://webpack.js.org/how-to/upgrade-from-webpack-1
 
 ## Installation
 ```shell
-npm i 2webpack2 -D
+npm i 2webpack2 webpack@beta -D
 ```
 
 ## Usage
@@ -64,6 +64,7 @@ To
 ## Options
 - quiet
 - context
+
 
 ## License
 MIT
