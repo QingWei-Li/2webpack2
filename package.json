@@ -6,7 +6,7 @@
   "files": [
     "lib",
     "index.js",
-    "dev-server"
+    "dev-server.js"
   ],
   "scripts": {
     "test": "xo && nyc ava"
