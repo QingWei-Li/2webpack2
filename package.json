@@ -4,7 +4,9 @@
   "description": "Turn configuration of webpack 1 to 2",
   "main": "index.js",
   "files": [
-    "lib"
+    "lib",
+    "index.js",
+    "dev-server"
   ],
   "scripts": {
     "test": "xo && nyc ava"
