@@ -1,6 +1,6 @@
 {
   "name": "2webpack2",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Turn configuration of webpack 1 to 2",
   "main": "index.js",
   "files": [
